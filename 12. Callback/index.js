@@ -37,4 +37,49 @@ caculate(3, 1, divCb)   // Output: 3
 // 3. Được gọi lại (trong hàm nhận đối số)
 
 
+// forEach()
+
+
+Array.prototype.forEach2 = function (callback) {
+    for (const index in this) {
+        if (this.has(index)) {
+            console.log('index: ', index)
+        }
+    } 
+}
+
+var courses = [
+    'JS',
+    'PHP',
+    'Ruby'
+]
+
+courses.length = 1000
+// for loop run 1000 lines @@
+for (let i = 0; i < courses.length; i++) {
+    console.log(courses[i]);
+} // result: 1000 lines
+// console.log(courses)
+
+// for..in run real object 
+for (var course in courses) {
+    console.log(course)
+} // result: 3
+
+courses.forEach2(function (object, index, arr) {
+    console.log(object, index, arr)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
