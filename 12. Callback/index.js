@@ -36,3 +36,5 @@ caculate(3, 1, divCb)   // Output: 3
 // 2. Truyền qua đối số
 // 3. Được gọi lại (trong hàm nhận đối số)
 
+
+
