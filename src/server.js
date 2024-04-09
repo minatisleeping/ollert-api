@@ -3,13 +3,12 @@ import express from 'express'
 import exitHook from 'async-exit-hook'
 import { CONNECT_DB, CLOSE_DB } from '~/config/mongodb'
 import { env } from '~/config/environment'
+import { API_v1 } from '~/routes/v1'
 
 const START_SERVER = () => {
   const app = express()
 
-  app.get('/', (req, res) => {
-    res.end('<h1>Hello World!</h1><hr>')
-  })
+  app.use('/v1', API_v1)
 
   app.listen(env.PORT, env.HOST, () => {
     console.log(`3. Hi ${env.AUTHOR}, Back-end server is running at http://${env.HOST}:${env.PORT}/`)
