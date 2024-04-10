@@ -11,11 +11,11 @@ const createNew = async (reqBody) => {
 
     //* Gọi tới tầng Model để xử lý lưu bản ghi newBoard vào db
     const createdBoard = await boardModel.createNew(newBoard)
-    console.log('🚀 ~ createNew ~ createdBoard:', createdBoard)
+    // console.log('🚀 ~ createNew ~ createdBoard:', createdBoard)
 
     //* Thường thì create(add) xong thì show ra luôn cho user xem(vary on each project)
     const getNewBoard = await boardModel.findOneById(createdBoard.insertedId)
-    console.log('🚀 ~ createNew ~ getNewBoard:', getNewBoard)
+    // console.log('🚀 ~ createNew ~ getNewBoard:', getNewBoard)
 
     //* Trả kết quả về, trong Service luôn phải có return
     return getNewBoard
