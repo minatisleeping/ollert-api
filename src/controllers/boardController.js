@@ -1,4 +1,5 @@
 import { StatusCodes } from 'http-status-codes'
+import { boardService } from '~/services/boardService'
 
 const createNew = async (req, res, next) => {
   try {
@@ -7,9 +8,10 @@ const createNew = async (req, res, next) => {
     // console.log('🚀 ~ createNew ~ req.params:', req.params)
 
     // Điều hướng data sang tầng Service
+    const createdBoard = await boardService.createNew(req.body)
 
     // Trả về kết quả cho Client
-    res.status(StatusCodes.CREATED).json({ message: 'POST from Validation layer: API create new boards' })
+    res.status(StatusCodes.CREATED).json(createdBoard)
   } catch (error) { next(error) }
 }
 
