@@ -55,13 +55,15 @@ const pushCardOrderIds = async (card) => {
   } catch (error) { throw new Error(error) }
 }
 
-
 const update = async (columnId, updateData) => {
   try {
     // Lọc những fields mà mình k cho phép update linh tinh
     Object.keys(updateData).forEach(fieldName => {
       if (INVALID_UPDATE_FIELDS.includes(fieldName)) delete updateData[fieldName]
     })
+
+    // Convert string to ObjectId
+    if (updateData.cardOrderIds) updateData.cardOrderIds = updateData.cardOrderIds.map(_id => new ObjectId(_id))
 
     return await GET_DB().collection(COLUMN_COLLECTION_NAME).findOneAndUpdate(
       { _id: new ObjectId(columnId) },
