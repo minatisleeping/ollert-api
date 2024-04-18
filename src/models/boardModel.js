@@ -74,11 +74,24 @@ const getDetails = async (id) => {
 }
 
 //* func này sẽ push 1 cái columnId vào cuối mảng columnOrderIds
+// Và dùng $push của mongodb để thêm 1 phần tử vào cuối mảng
 const pushColumnOrderIds = async (column) => {
   try {
     return await GET_DB().collection(BOARD_COLLECTION_NAME).findOneAndUpdate(
       { _id: new ObjectId(column.boardId) },
       { $push: { columnOrderIds: new ObjectId(column._id) } },
+      { returnDocument: 'after' }
+    )
+  } catch (error) { throw new Error(error) }
+}
+
+//* Lấy một phần tử columnId ra khỏi mảng columnOrderIds
+// Và dùng $pull của mongodb để lấy 1 phần tử ra khỏi mảng rồi xoá nó
+const pullColumnOrderIds = async (column) => {
+  try {
+    return await GET_DB().collection(BOARD_COLLECTION_NAME).findOneAndUpdate(
+      { _id: new ObjectId(column.boardId) },
+      { $pull: { columnOrderIds: new ObjectId(column._id) } },
       { returnDocument: 'after' }
     )
   } catch (error) { throw new Error(error) }
@@ -109,5 +122,6 @@ export const boardModel = {
   findOneById,
   getDetails,
   pushColumnOrderIds,
+  pullColumnOrderIds,
   update
 }
