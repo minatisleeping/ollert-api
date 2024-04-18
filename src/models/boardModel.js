@@ -40,11 +40,9 @@ const createNew = async (data) => {
   } catch (error) { throw new Error(error) }
 }
 
-// * tao đặt parameter là '_id' cho nó trùng với tên field trong MongoDB
-//! Bản chất findOne của MongoDB sẽ tìm theo _id (cẩn thận chỗ này nha minatt :D)
-const findOneById = async (_id) => {
+const findOneById = async (boardId) => {
   try {
-    return await GET_DB().collection(BOARD_COLLECTION_NAME).findOne({ _id: new ObjectId(_id) })
+    return await GET_DB().collection(BOARD_COLLECTION_NAME).findOne({ boardId: new ObjectId(boardId) })
   } catch (error) { throw new Error(error) }
 }
 
