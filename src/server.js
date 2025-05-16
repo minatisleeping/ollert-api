@@ -20,9 +20,16 @@ const START_SERVER = () => {
   // Middleware: Error Handler(xử lý lỗi tập trung)
   app.use(errorHandlingMiddleware)
 
-  app.listen(env.PORT, env.HOST, () => {
-    console.log(`3. Hi ${env.AUTHOR}, Back-end server is running at http://${env.HOST}:${env.PORT}/`)
-  })
+  if (env.BUILD_MODE === 'production') {
+    app.listen(process.env.PORT, () => {
+      console.log(`3. Production: Hi ${env.AUTHOR}, Back-end server is running at PORT ${process.env.PORT}`)
+    })
+  } else {
+    app.listen(env.PORT, env.HOST, () => {
+      console.log(`3. Local: Hi ${env.AUTHOR}, Back-end server is running at http://${env.HOST}:${env.PORT}/`)
+    })
+  }
+
 
   exitHook(() => {
     console.log('\n4. Disconnecting from MongoDB..')
