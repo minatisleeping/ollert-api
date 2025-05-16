@@ -11,12 +11,10 @@ import { errorHandlingMiddleware } from '~/middlewares/errorHandlingMiddleware'
 const START_SERVER = () => {
   const app = express()
 
-  // Xử lí CORS
-  app.use(cors(corsOptions))
+  app.use(cors(corsOptions)) // Xử lí CORS
 
   app.use(express.json())
 
-  // Use APIs v1
   app.use('/v1', API_v1)
 
   // Middleware: Error Handler(xử lý lỗi tập trung)
@@ -48,12 +46,3 @@ const START_SERVER = () => {
     process.exit(0)
   }
 })()
-
-// console.log('1. Connecting to MongoDB...')
-// CONNECT_DB()
-//   .then(() => console.log('2. Connected to MongoDB Could Atlas!'))
-//   .then(() => START_SERVER())
-//   .catch(err => {
-//     console.error(err)
-//     process.exit(0)
-//   })

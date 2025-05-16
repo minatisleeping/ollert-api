@@ -64,7 +64,6 @@ const update = async (req, res, next) => {
 }
 
 const moveCardToDifferentColumn = async (req, res, next) => {
-  //* K require khi update
   const correctCondition = Joi.object({
     currentCardId: Joi.string().required().pattern(OBJECT_ID_RULE).message(OBJECT_ID_RULE_MESSAGE),
     prevColumnId: Joi.string().pattern(OBJECT_ID_RULE).message(OBJECT_ID_RULE_MESSAGE),

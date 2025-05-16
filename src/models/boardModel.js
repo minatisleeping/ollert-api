@@ -49,8 +49,6 @@ const findOneById = async (boardId) => {
 // Query tổng hợp (aggregate) để lấy toàn bộ Columns và Cards thuộc Board
 const getDetails = async (id) => {
   try {
-    // Tạm thời giống hệt hàm findOneById - và sẽ update phần aggregate
-
     const result = await GET_DB().collection(BOARD_COLLECTION_NAME).aggregate([
       { $match: {
         _id: new ObjectId(id),

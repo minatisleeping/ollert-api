@@ -3,10 +3,6 @@ import { boardService } from '~/services/boardService'
 
 const createNew = async (req, res, next) => {
   try {
-    // console.log('🚀 ~ createNew ~ req.body:', req.body)
-    // console.log('🚀 ~ createNew ~ req.query:', req.query)
-    // console.log('🚀 ~ createNew ~ req.params:', req.params)
-
     // Điều hướng data sang tầng Service
     const createdBoard = await boardService.createNew(req.body)
 
@@ -17,8 +13,6 @@ const createNew = async (req, res, next) => {
 
 const getDetails = async (req, res, next) => {
   try {
-    // console.log('🚀 ~ createNew ~ req.params:', req.params)
-
     const boardId = req.params.id
     const board = await boardService.getDetails(boardId)
 
