@@ -1,24 +1,58 @@
-## Trello API - MERN STACK PRO
+# Trello Website Clone(React - Material UI)
 
+## Features ✨
 
+### Board Management 📋
+- Create and manage multiple boards
+- Customize board backgrounds and themes
+- Toggle between light and dark mode
 
-### Requirements - Thông tin của bộ Code Base này - Chuẩn các phiên bản dưới đây để bắt đầu học: (Semantic Versioning)
+### List & Card Organization 📊
+- Create unlimited lists within boards
+- Add, edit, and delete cards in any list
+- Drag and drop cards between lists
+- Reorder lists with intuitive drag-and-drop
 
-```
-* nodejs = v18.16.0
-* npm = v9.8.1
-* yarn = v1.22.19
+### Card Details & Attachments 📎
+- Add detailed descriptions to cards
+- Track checklist progress
+- Attach files and images to cards
+- Add colored labels for visual organization
 
-* "express": "^4.18.2"
-* "nodemon": "^3.0.1"
-* "eslint": "^8.47.0"
+### User Experience 👤
+- Board sharing and collaboration
+- Activity log to track changes
+- Responsive design for mobile and desktop
 
-* "@babel/runtime": "^7.22.10"
-* "@babel/cli": "^7.22.10"
-* "@babel/core": "^7.22.10"
-* "@babel/eslint-parser": "^7.22.10"
-* "@babel/node": "^7.22.10"
-* "@babel/plugin-transform-runtime": "^7.22.10"
-* "@babel/preset-env": "^7.22.10"
-* "babel-plugin-module-resolver": "^5.0.0"
-```
+### Advanced Features 🚀
+- Search functionality across all boards and cards
+- Data persistence using MongoDB
+- RESTful API with Express backend
+
+## System Architecture 🏗️
+
+### Frontend Technologies
+- React with TypeScript for UI components
+- Material UI for component styling
+- React Beautiful DND for drag-and-drop functionality
+- Axios for API requests
+- React Router for navigation
+
+### Backend Technologies
+- Node.js with Express framework
+- MongoDB for database storage
+- JWT for authentication
+
+## Preview Screenshot
+
+<div  align="center">
+
+<img  src="https://github.com/minatisleeping/trello-web/blob/master/images/trello-web-light-mode.png"  alt="Light Mode"  width="45%"></img> &nbsp;&nbsp; 
+<img  src="https://github.com/minatisleeping/trello-web/blob/master/images/trello-web-dark-mode.png"  alt="Dark Mode"  width="45%"></img> &nbsp;&nbsp; 
+
+</div>
+
+## License & Copyright
+ &copy; 2024 Mai Minh Nhat Minatisleeping Licensed under the [GPL-3.0 LICENSE](https://github.com/minatisleeping/trello-web/blob/master/LICENSE). 
+
+ > :love_you_gesture: Feel free to use my repository and star it if you find something interesting :love_you_gesture: 
