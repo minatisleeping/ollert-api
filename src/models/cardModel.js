@@ -45,7 +45,6 @@ const findOneById = async (_id) => {
 
 const update = async (cardId, updateData) => {
   try {
-    // Lọc những fields mà mình k cho phép update linh tinh
     Object.keys(updateData).forEach(fieldName => {
       if (INVALID_UPDATE_FIELDS.includes(fieldName)) delete updateData[fieldName]
     })

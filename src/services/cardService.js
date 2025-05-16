@@ -8,7 +8,6 @@ const createNew = async (reqBody) => {
     const getNewCard = await cardModel.findOneById(createdCard.insertedId)
 
     if (getNewCard) {
-      // Cập nhật lại mảng columnOrderIds trong collection boards
       await columnModel.pushCardOrderIds(getNewCard)
     }
 

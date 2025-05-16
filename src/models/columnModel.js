@@ -44,7 +44,6 @@ const findOneById = async (_id) => {
   } catch (error) { throw new Error(error) }
 }
 
-//* func này sẽ push 1 cái cardId vào cuối mảng cardOrderIds
 const pushCardOrderIds = async (card) => {
   try {
     return await GET_DB().collection(COLUMN_COLLECTION_NAME).findOneAndUpdate(
@@ -57,7 +56,6 @@ const pushCardOrderIds = async (card) => {
 
 const update = async (columnId, updateData) => {
   try {
-    // Lọc những fields mà mình k cho phép update linh tinh
     Object.keys(updateData).forEach(fieldName => {
       if (INVALID_UPDATE_FIELDS.includes(fieldName)) delete updateData[fieldName]
     })
